@@ -1,10 +1,10 @@
 *cursorword.txt*	Underlines the word under the cursor
 
-Version: 0.0
+Version: 0.1
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2015/01/24 14:34:50.
+Last Change: 2015/01/29 10:27:23.
 
 CONTENTS					*cursorword-contents*
 
@@ -15,18 +15,18 @@ Changelog				|cursorword-changelog|
 INTRODUCTION					*cursorword-introduction*
 This *cursorword* plugin underlines the word under the cursor. That's it.
 
-While we are coding, we always take attention to the variable under the
-cursor. Where did we define the variable? In which statement do we use the
-variable?  Searching the variable using |star| or |#| is a simple solution to
-highlight all the places the variable is used. However, it costs too much time
-to highlight a word, move around to check the places and clear the highlight.
-This plugin |cursorword| provides you the modest underlines for the variables
-under the cursor to let you know all the places the variable is used at a
-glance without stopping coding.
+While we are coding, we always pay attention to the variable under the cursor.
+Where did we define the variable? In which statement do we use the variable?
+Searching the variable using |star| or |#| is a simple solution to highlight all
+the places the variable is used. However, it costs too much time to highlight
+a word, move around to check the places and clear the highlight.  This plugin
+|cursorword| provides you the modest underlines for the variables under the
+cursor to let you know all the places the variable is used at a glance without
+stopping coding.
 
 The brightest plugin (https://github.com/osyo-manga/vim-brightest) is a nice
 plugin to fulfill highlights of the word under the cursor. However, it uses
-too long codes and is too slow. I had being using the plugin for a while but I
+too long codes and is too slow. I had been using the plugin for a while but I
 could not bear the slowness caused by brightest on the cursor motions. This is
 why I created |cursorword|. I think that a plugin which is running all the time
 should be coded with the performance efficiency in mind. When we publish a
@@ -48,6 +48,9 @@ is and for what kind of software such configurability is required.
 
 ==============================================================================
 CHANGELOG					*cursorword-changelog*
+
+0.1	2014-01-29
+	- Fix English in the document (Thank you ujihisa).
 
 0.0	2014-01-25
 	- Initial commit.
