@@ -2,7 +2,7 @@
 " Filename: autoload/cursorword.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2015/01/24 16:31:03.
+" Last Change: 2015/01/31 11:13:19.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -19,7 +19,7 @@ function! cursorword#highlight() abort
 endfunction
 
 function! cursorword#matchadd() abort
-  let enable = get(b:, 'cursorword', get(g:, 'cursorword', 1))
+  let enable = get(b:, 'cursorword', get(g:, 'cursorword', 1)) && !has('vim_starting')
   if !enable && !get(w:, 'cursorword_match') | return | endif
   let line = getline('.')
   let linenr = line('.')
