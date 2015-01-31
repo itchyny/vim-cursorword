@@ -4,7 +4,7 @@ Version: 0.1
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2015/01/29 10:27:23.
+Last Change: 2015/01/31 11:13:08.
 
 CONTENTS					*cursorword-contents*
 
@@ -51,6 +51,7 @@ CHANGELOG					*cursorword-changelog*
 
 0.1	2014-01-29
 	- Fix English in the document (Thank you ujihisa).
+	- Check if Vim has started.
 
 0.0	2014-01-25
 	- Initial commit.
