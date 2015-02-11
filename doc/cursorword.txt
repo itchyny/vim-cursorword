@@ -4,7 +4,7 @@ Version: 0.2
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2015/02/10 00:15:59.
+Last Change: 2015/02/11 12:12:47.
 
 CONTENTS					*cursorword-contents*
 
@@ -49,10 +49,12 @@ is and for what kind of software such configurability is required.
 ==============================================================================
 CHANGELOG					*cursorword-changelog*
 
+0.2	2014-02-10
+	- Call cursorword#highlight on loading the autoload script.
+
 0.1	2014-01-29
 	- Fix English in the document (Thank you ujihisa).
 	- Check if Vim has started.
-	- Call cursorword#highlight on loading the autoload script.
 
 0.0	2014-01-25
 	- Initial commit.
