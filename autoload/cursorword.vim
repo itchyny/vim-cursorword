@@ -2,7 +2,7 @@
 " Filename: autoload/cursorword.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2015/02/07 08:24:44.
+" Last Change: 2015/02/11 13:12:44.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -24,6 +24,8 @@ function! cursorword#matchadd() abort
   let line = getline('.')
   let linenr = line('.')
   let word = matchstr(line[:(col('.')-1)], '\k*$')[:-2] . matchstr(line[(col('.')-1):], '^\k*')
+  " skip blacklisted words
+  if index(get(b:, 'cursorword_blacklist', []), word) >=0 | return | endif
   if get(w:, 'cursorword_state', []) ==# [ linenr, word, enable ] | return | endif
   let w:cursorword_state = [ linenr, word, enable ]
   silent! call matchdelete(w:cursorword_id0)

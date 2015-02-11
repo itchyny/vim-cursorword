@@ -9,6 +9,7 @@ Last Change: 2015/02/11 12:12:47.
 CONTENTS					*cursorword-contents*
 
 Introduction				|cursorword-introduction|
+Options					|cursorword-options|
 Changelog				|cursorword-changelog|
 
 ==============================================================================
@@ -34,8 +35,8 @@ plugin which stays running in all buffers, we should be aware that it will use
 much resource of all the users.
 
 The code of |cursorword| is very tiny. It's very tiny that |cursorword| runs ten
-times faster than brightest. Instead of its efficiency, |cursorword| is totally
-unconfigurable. But you will find this plugin just comfortable; the modest
+times faster than brightest. Instead of its efficiency, |cursorword| supports
+only one option. But you will find this plugin just comfortable; the modest
 underlines are enough for us. A good configurable plugin would have many
 options that users can configure almost all the features. But be relaxed and
 imagine, do we need such a lot of options for a plugin to highlight the word
@@ -47,7 +48,20 @@ unwanted slowness on many users. We have to rethink what good configurability
 is and for what kind of software such configurability is required.
 
 ==============================================================================
+OPTIONS						*cursorword-options*
+------------------------------------------------------------------------------
+						*b:cursorword_blacklist*
+Use this options to control which words will not be underlined.
+Default: []. Values: list of strings.
+>
+    let b:cursorword_blacklist = ['self', 'def', 'import']
+<
+
+==============================================================================
 CHANGELOG					*cursorword-changelog*
+
+0.3	2014-02-11
+	- Added cursorword_blacklist option
 
 0.2	2014-02-10
 	- Call cursorword#highlight on loading the autoload script.
