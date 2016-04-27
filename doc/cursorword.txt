@@ -1,10 +1,10 @@
 *cursorword.txt*	Underlines the word under the cursor
 
-Version: 0.3
+Version: 0.4
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2016/04/02 15:38:49.
+Last Change: 2016/04/27 21:30:00.
 
 CONTENTS					*cursorword-contents*
 
@@ -48,6 +48,9 @@ is and for what kind of software such configurability is required.
 
 ==============================================================================
 CHANGELOG					*cursorword-changelog*
+
+0.4	2016-04-27
+	- The line number is already retrieved so use the variable
 
 0.3	2016-04-02
 	- Compare to empty string instead of using the len function.
