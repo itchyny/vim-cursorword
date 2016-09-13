@@ -4,7 +4,7 @@ Version: 0.4
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2016/04/27 21:30:00.
+Last Change: 2016/09/13 22:00:00.
 
 CONTENTS					*cursorword-contents*
 
@@ -45,6 +45,18 @@ performance of the software. Keep your software small for the happiness of
 most users. Too much configurability makes your software dirty and causes
 unwanted slowness on many users. We have to rethink what good configurability
 is and for what kind of software such configurability is required.
+
+==============================================================================
+OPTIONS						*cursorword-options*
+
+	g:cursorword				*g:cursorword*
+		Set this variable to 0 to disable this plugin.
+		The default value is 1.
+
+	b:cursorword				*b:cursorword*
+		If you set this variable to 0, the plugin stops highlighting
+		the word under the cursor in the buffer. This variable has
+		priority over |g:cursorword|.
 
 ==============================================================================
 CHANGELOG					*cursorword-changelog*
