@@ -4,11 +4,12 @@ Version: 0.5
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2016/09/14 09:00:00.
+Last Change: 2016/09/16 00:46:14.
 
 CONTENTS					*cursorword-contents*
 
 Introduction				|cursorword-introduction|
+Options					|cursorword-options|
 Changelog				|cursorword-changelog|
 
 ==============================================================================
@@ -50,8 +51,7 @@ is and for what kind of software such configurability is required.
 OPTIONS						*cursorword-options*
 
 	g:cursorword				*g:cursorword*
-		Set this variable to 0 to disable this plugin.
-		The default value is 1.
+		Set this variable to 0 to disable this plugin globally.
 
 	b:cursorword				*b:cursorword*
 		If you set this variable to 0, the plugin stops highlighting
