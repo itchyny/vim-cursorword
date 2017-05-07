@@ -1,10 +1,10 @@
 *cursorword.txt*	Underlines the word under the cursor
 
-Version: 0.5
+Version: 0.6
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2016/09/16 00:46:14.
+Last Change: 2017/05/07 19:27:43.
 
 CONTENTS					*cursorword-contents*
 
@@ -60,6 +60,9 @@ OPTIONS						*cursorword-options*
 
 ==============================================================================
 CHANGELOG					*cursorword-changelog*
+
+0.6	2017-04-25, 05-03
+	- underline multi-byte alphabets like accents, umlauts and Cyrillic alphabets
 
 0.5	2016-09-14
 	- Tweak the logic of retrieving the word under the cursor.
