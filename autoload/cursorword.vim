@@ -2,7 +2,7 @@
 " Filename: autoload/cursorword.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2017/05/03 01:06:23.
+" Last Change: 2017/05/10 21:23:15.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -18,7 +18,7 @@ function! cursorword#highlight() abort
   execute highlight matchstr(out, 'ctermbg=#\?\w\+') matchstr(out, 'guibg=#\?\w\+')
 endfunction
 
-let s:alphabets = '^[\x00-\x7f\xb5\xc0-\xd6\xd8-\xf6\xf8-\u02af\u0370-\u0373\u0376\u0377\u0386-\u0481\u048a-\u052f]\+$'
+let s:alphabets = '^[\x00-\x7f\xb5\xc0-\xd6\xd8-\xf6\xf8-\u01bf\u01c4-\u02af\u0370-\u0373\u0376\u0377\u0386-\u0481\u048a-\u052f]\+$'
 
 function! cursorword#matchadd() abort
   let enable = get(b:, 'cursorword', get(g:, 'cursorword', 1)) && !has('vim_starting')
