@@ -2,7 +2,7 @@
 " Filename: autoload/cursorword.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2017/05/26 00:41:33.
+" Last Change: 2017/05/26 00:47:42.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -20,10 +20,10 @@ endfunction
 
 let s:alphabets = '^[\x00-\x7f\xb5\xc0-\xd6\xd8-\xf6\xf8-\u01bf\u01c4-\u02af\u0370-\u0373\u0376\u0377\u0386-\u0481\u048a-\u052f]\+$'
 
-function! cursorword#matchadd() abort
+function! cursorword#matchadd(...) abort
   let enable = get(b:, 'cursorword', get(g:, 'cursorword', 1)) && !has('vim_starting')
   if !enable && !get(w:, 'cursorword_match') | return | endif
-  let i = (mode() ==# 'i' || mode() ==# 'R') && col('.') > 1
+  let i = (a:0 ? a:1 : mode() ==# 'i' || mode() ==# 'R') && col('.') > 1
   let line = getline('.')
   let linenr = line('.')
   let word = matchstr(line[:(col('.')-i-1)], '\k*$') . matchstr(line[(col('.')-i-1):], '^\k*')[1:]
