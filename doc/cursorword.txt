@@ -1,10 +1,10 @@
 *cursorword.txt*	Underlines the word under the cursor
 
-Version: 0.7
+Version: 0.8
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2017/05/10 22:43:55.
+Last Change: 2017/10/19 22:07:08.
 
 CONTENTS					*cursorword-contents*
 
@@ -60,6 +60,11 @@ OPTIONS						*cursorword-options*
 
 ==============================================================================
 CHANGELOG					*cursorword-changelog*
+
+0.8	2017-10-19
+	- improve word matching for insert and replace modes
+	- update word under the cursor matching on InsertEnter and InsertLeave events
+	- skip underlining word if the word is too long to avoid E339
 
 0.7	2017-05-10
 	- fix E16 error on the old regexp engine
