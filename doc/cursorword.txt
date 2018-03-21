@@ -57,6 +57,14 @@ OPTIONS						*cursorword-options*
 		If you set this variable to 0, the plugin stops highlighting
 		the word under the cursor in the buffer. This variable has
 		priority over |g:cursorword|.
+		
+	g:cursorword_highlight_style		*g:cursorword_highlight_style*
+		Define the style for highlighting all matches.
+		E.g.:	let g:cursorword_highlight_style = "ctermfg:9
+				\ guifg=#ff0000 cterm=undercurl gui=undercurl"
+
+		See |highlight| for further information how to define such.
+		Default: "term=underline cterm=underline gui=underline"
 
 ==============================================================================
 CHANGELOG					*cursorword-changelog*

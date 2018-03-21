@@ -10,7 +10,8 @@ set cpo&vim
 
 function! cursorword#highlight() abort
   if !get(g:, 'cursorword_highlight', 1) | return | endif
-  highlight CursorWord0 term=underline cterm=underline gui=underline
+  let l:style = get(g:, 'cursorword_highlight_style', "term=underline cterm=underline gui=underline")
+  execute("highlight CursorWord0 " . l:style)
   redir => out
     silent! highlight CursorLine
   redir END
