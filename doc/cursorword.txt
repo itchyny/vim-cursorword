@@ -53,6 +53,16 @@ OPTIONS						*cursorword-options*
 	g:cursorword				*g:cursorword*
 		Set this variable to 0 to disable this plugin globally.
 
+	g:cursorword_match_groups	*g:cursorword_match_groups*
+		Set this variable to an array of syntax groups to underline
+		only those groups. An emtpy array is the default, which will
+		match all syntax groups.
+
+	g:cursorword_exclude_groups	*g:cursorword_exclude_groups*
+		Set this variable to an array of syntax groups to exclude
+		those groups from underlining. An emtpy array is the default,
+		which will exclude no syntax groups.
+
 	b:cursorword				*b:cursorword*
 		If you set this variable to 0, the plugin stops highlighting
 		the word under the cursor in the buffer. This variable has
