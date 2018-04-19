@@ -22,8 +22,24 @@ let s:alphabets = '^[\x00-\x7f\xb5\xc0-\xd6\xd8-\xf6\xf8-\u01bf\u01c4-\u02af\u03
 
 function! cursorword#inmatchgroup() abort
   let matching_groups = get(g:, 'cursorword_match_groups', [])
-  let current_syntax_groups = [ synIDattr(synID(line("."),col("."),1),"name"), synIDattr(synIDtrans(synID(line("."),col("."),1)),"name"), synIDattr(synID(line("."),col("."),0),"name") ]
-  if (len(matching_groups) > 0 && index(matching_groups, current_syntax_groups[0]) < 0 && index(matching_groups, current_syntax_groups[1]) < 0 && index(matching_groups, current_syntax_groups[2]) < 0)
+  let exclude_groups = get(g:, 'cursorword_exclude_groups', [])
+  let current_syntax_groups = [
+      \synIDattr(synID(line("."),col("."),1),"name"),
+      \synIDattr(synIDtrans(synID(line("."),col("."),1)),"name"),
+      \synIDattr(synID(line("."),col("."),0),"name")
+    \]
+  if (
+        \(len(matching_groups) > 0
+        \&& index(matching_groups, current_syntax_groups[0]) < 0
+        \&& index(matching_groups, current_syntax_groups[1]) < 0
+        \&& index(matching_groups, current_syntax_groups[2]) < 0)
+        \|| (len(exclude_groups) > 0 && (
+        \index(exclude_groups, current_syntax_groups[0]) >= 0
+        \|| index(exclude_groups, current_syntax_groups[1]) >= 0
+        \|| index(exclude_groups, current_syntax_groups[2]) >= 0
+        \)
+        \)
+        \)
     return 0
   endif
   return 1
