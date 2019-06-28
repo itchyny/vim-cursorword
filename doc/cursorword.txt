@@ -58,6 +58,12 @@ OPTIONS						*cursorword-options*
 		the word under the cursor in the buffer. This variable has
 		priority over |g:cursorword|.
 
+	g:cursorword_highlight			*g:cursorword_highlight*
+		Set this variable to 0 to disable the default highlighting
+		style, which applies underlining on top of |hl-CursorLine|.
+		Note: if you set this, you must define your own highlighting
+		styles for the CursorWord0 and CursorWord1 |highlight-groups|.
+
 ==============================================================================
 CHANGELOG					*cursorword-changelog*
 
