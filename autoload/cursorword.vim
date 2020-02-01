@@ -2,7 +2,7 @@
 " Filename: autoload/cursorword.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2017/09/29 20:00:00.
+" Last Change: 2020/02/01 12:00:00.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -38,6 +38,27 @@ function! cursorword#matchadd(...) abort
   let w:cursorword_id1 = matchadd('CursorWord' . &l:cursorline, '\%' . linenr . 'l' . pattern, -1)
   let w:cursorword_match = 1
 endfunction
+
+if has('timers')
+  let s:timer = 0
+  function! cursorword#cursormoved() abort
+    if get(w:, 'cursorword_match')
+      silent! call matchdelete(w:cursorword_id0)
+      silent! call matchdelete(w:cursorword_id1)
+      let w:cursorword_match = 0
+      let w:cursorword_state = []
+    endif
+    call timer_stop(s:timer)
+    let s:timer = timer_start(50, 'cursorword#timer_callback')
+  endfunction
+  function! cursorword#timer_callback(...) abort
+    call cursorword#matchadd()
+  endfunction
+else
+  function! cursorword#cursormoved() abort
+    call cursorword#matchadd()
+  endfunction
+endif
 
 if !has('vim_starting')
   call cursorword#highlight()
