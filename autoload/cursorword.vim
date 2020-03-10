@@ -2,7 +2,7 @@
 " Filename: autoload/cursorword.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2020/02/01 12:00:00.
+" Last Change: 2020/03/10 11:56:54.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -58,10 +58,6 @@ else
   function! cursorword#cursormoved() abort
     call cursorword#matchadd()
   endfunction
-endif
-
-if !has('vim_starting')
-  call cursorword#highlight()
 endif
 
 let &cpo = s:save_cpo

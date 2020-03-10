@@ -2,7 +2,7 @@
 " Filename: plugin/cursorword.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2020/02/01 12:00:00.
+" Last Change: 2020/03/10 11:57:22.
 " =============================================================================
 
 if exists('g:loaded_cursorword') || v:version < 703
@@ -15,8 +15,9 @@ set cpo&vim
 
 augroup cursorword
   autocmd!
-  autocmd VimEnter,ColorScheme * call cursorword#highlight()
-  autocmd VimEnter,WinEnter,BufEnter * call cursorword#matchadd()
+  autocmd VimEnter * call cursorword#highlight() |
+        \ autocmd cursorword WinEnter,BufEnter * call cursorword#matchadd()
+  autocmd ColorScheme * call cursorword#highlight()
   autocmd CursorMoved,CursorMovedI * call cursorword#cursormoved()
   autocmd InsertEnter * call cursorword#matchadd(1)
   autocmd InsertLeave * call cursorword#matchadd(0)
