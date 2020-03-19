@@ -4,7 +4,7 @@ Version: 0.8
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2017/10/19 22:07:08.
+Last Change: 2020/03/19 14:35:58.
 
 CONTENTS					*cursorword-contents*
 
@@ -63,6 +63,12 @@ OPTIONS						*cursorword-options*
 		style, which applies underlining on top of |hl-CursorLine|.
 		Note: if you set this, you must define your own highlighting
 		styles for the CursorWord0 and CursorWord1 |highlight-groups|.
+
+	g:cursorword_delay			*g:cursorword_delay*
+		The delay duration in milliseconds for setting the word
+		highlight after cursor motions. When the value is set to 0, the
+		plugin highlights the word synchronously, but there is a
+		performance sacrifice. The default value is 50.
 
 ==============================================================================
 CHANGELOG					*cursorword-changelog*
