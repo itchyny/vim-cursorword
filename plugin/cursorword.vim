@@ -15,8 +15,6 @@ set cpo&vim
 
 augroup cursorword
   autocmd!
-  autocmd VimEnter * call cursorword#highlight() |
-        \ autocmd cursorword WinEnter,BufEnter * call cursorword#matchadd()
   autocmd ColorScheme * call cursorword#highlight()
   autocmd CursorMoved,CursorMovedI * call cursorword#cursormoved()
   autocmd InsertEnter * call cursorword#matchadd(1)
