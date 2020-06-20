@@ -2,7 +2,7 @@
 " Filename: autoload/cursorword.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2020/05/02 13:17:53.
+" Last Change: 2020/06/20 14:12:12.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -29,8 +29,10 @@ function! cursorword#matchadd(...) abort
   let word = matchstr(line[:(col('.')-i-1)], '\k*$') . matchstr(line[(col('.')-i-1):], '^\k*')[1:]
   if get(w:, 'cursorword_state', []) ==# [ linenr, word, enable ] | return | endif
   let w:cursorword_state = [ linenr, word, enable ]
-  silent! call matchdelete(w:cursorword_id0)
-  silent! call matchdelete(w:cursorword_id1)
+  if get(w:, 'cursorword_match')
+    silent! call matchdelete(w:cursorword_id0)
+    silent! call matchdelete(w:cursorword_id1)
+  endif
   let w:cursorword_match = 0
   if !enable || word ==# '' || len(word) !=# strchars(word) && word !~# s:alphabets || len(word) > 1000 | return | endif
   let pattern = '\<' . escape(word, '~"\.^$[]*') . '\>'
