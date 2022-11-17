@@ -1,10 +1,9 @@
 *cursorword.txt*	Underlines the word under the cursor
 
-Version: 0.8
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-cursorword
-Last Change: 2020/03/19 14:35:58.
+Last Change: 2022/11/17 18:55:06.
 
 CONTENTS					*cursorword-contents*
 
@@ -60,49 +59,14 @@ OPTIONS						*cursorword-options*
 
 	g:cursorword_highlight			*g:cursorword_highlight*
 		Set this variable to 0 to disable the default highlighting
-		style, which applies underlining on top of |hl-CursorLine|.
-		Note: if you set this, you must define your own highlighting
-		styles for the CursorWord0 and CursorWord1 |highlight-groups|.
+		style. If you set this variable to 0, you need to define your
+		own style for the CursorWord |highlight-groups|.
 
 	g:cursorword_delay			*g:cursorword_delay*
 		The delay duration in milliseconds for setting the word
 		highlight after cursor motions. When the value is set to 0, the
 		plugin highlights the word synchronously, but there is a
 		performance sacrifice. The default value is 50.
-
-==============================================================================
-CHANGELOG					*cursorword-changelog*
-
-0.8	2017-10-19
-	- improve word matching for insert and replace modes
-	- update word under the cursor matching on InsertEnter and InsertLeave events
-	- skip underlining word if the word is too long to avoid E339
-
-0.7	2017-05-10
-	- fix E16 error on the old regexp engine
-
-0.6	2017-04-25, 05-03
-	- underline multi-byte alphabets like accents, umlauts and Cyrillic alphabets
-
-0.5	2016-09-14
-	- Tweak the logic of retrieving the word under the cursor.
-	- Add help for g:cursorword, b:cursorword.
-
-0.4	2016-04-27
-	- The line number is already retrieved so use the variable.
-
-0.3	2016-04-02
-	- Compare to empty string instead of using the len function.
-
-0.2	2015-02-10
-	- Call cursorword#highlight on loading the autoload script.
-
-0.1	2015-01-29
-	- Fix English in the document (Thank you ujihisa).
-	- Check if Vim has started.
-
-0.0	2015-01-25
-	- Initial commit.
 
 ==============================================================================
 vim:tw=78:sw=4:ts=8:ft=help:norl:noet:
